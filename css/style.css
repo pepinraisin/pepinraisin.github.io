@@ -157,7 +157,10 @@ ul.checklist li::before {
     width: 20vw;
     height: 20vw;
     border: 1px solid var(--white);
-    animation: pulse 2s ease-in-out infinite;
+}
+
+.pulsar {
+    animation: pulse 2s ease-in-out 1;
 }
 
 #services>div:nth-child(1) {

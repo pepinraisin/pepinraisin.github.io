@@ -139,10 +139,11 @@
 
     // Set up a scroll event listener
     window.addEventListener('scroll', () => {
-        // Get the distance scrolled from the top
         const scrollPosition = window.scrollY;
         const difference = scrollPosition - window.screen.height
-        // Apply a parallax effect - adjust the divisor for the desired speed
+
+        if (scrollPosition > 0.5 * window.screen.height)
+            Object.values(document.querySelectorAll('#services>div')).map(d => d.classList.add('pulsar'));
         if (difference > 1)
             logoContainer.style.transform = `translateY(-${difference}px)`;
     });
