@@ -1,0 +1,173 @@
+:root {
+    --purple: #613DC1;
+    --black: #262626;
+    --white: #fafafa;
+    --green: #07BEB8;
+    --lime: #CEFF1A;
+    --blue: #3A5999;
+}
+
+html,
+button {
+    font-family: Roboto Mono;
+    font-size: xx-large;
+}
+
+body {
+    margin: 0;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+section {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: fit-content;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Tomorrow;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--lime);
+    color: var(--blue);
+    border: none;
+    border-radius: 2px;
+    transition: all 0.3s ease-in;
+}
+
+button:hover {
+    background-color: var(--green);
+    color: var(--purple);
+}
+
+button.secondary {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+button.secondary:hover {
+    background-color: var(--lime);
+    color: var(--blue);
+}
+
+.ham,
+.ham:before,
+.ham:after,
+.ham>span {
+    background-color: var(--black);
+    margin-bottom: 5px;
+    width: 30px;
+    height: 5px;
+}
+
+.ham:before,
+.ham:after,
+.ham>span {
+    content: '';
+    display: block;
+}
+
+
+.nav {
+    position: fixed;
+    width: 100vw;
+    background-color: var(--white);
+    color: var(--black);
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.nav h2 {
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.nav h2 img {
+    height: 60px;
+    mix-blend-mode: multiply;
+}
+
+#rotating-head {
+    color: var(--lime);
+}
+
+#hero {
+    background-color: var(--purple);
+    background-image: url(../images/techback.png);
+    background-blend-mode: color-burn;
+    background-clip: content-box;
+    height: 100vh;
+    width: 100%;
+}
+
+#hero h1 {
+    margin-bottom: 0;
+}
+
+#hero p {
+    width: 50vw;
+    font-size: smaller;
+}
+
+ul.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+ul.checklist li::before {
+    content: "✔ "
+}
+
+#services {
+    display: flex;
+    gap: 20px;
+}
+
+#services>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    height: 20vw;
+    border: 1px solid var(--white);
+}
+
+#services>div:hover {
+    border-color: var(--green);
+    color: var(--green)
+}
+
+#services>div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--green);
+    transition: all 0.3s ease-in;
+    color: var(--black);
+    position: absolute;
+    font-size: smaller;
+    width: 20vw;
+    height: 20vw;
+    opacity: 0;
+}
+
+#services>div:hover div {
+    opacity: 1;
+}
