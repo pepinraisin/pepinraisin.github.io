@@ -1,6 +1,7 @@
 :root {
     --purple: #613DC1;
     --black: #262626;
+    --shadow: #111;
     --white: #fafafa;
     --green: #07BEB8;
     --lime: #CEFF1A;
@@ -156,6 +157,19 @@ ul.checklist li::before {
     width: 20vw;
     height: 20vw;
     border: 1px solid var(--white);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+#services>div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#services>div:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+#services>div:nth-child(3) {
+    animation-delay: 1s;
 }
 
 #services>div:hover {
@@ -181,21 +195,67 @@ ul.checklist li::before {
     opacity: 1;
 }
 
-/* #clients {
-    background-image: url(https://lajollaweb.com/images/portfolio-background.png);
+#clients {
+    overflow: hidden;
+    /* background-image: url(https://lajollaweb.com/images/about-background.png); */
     background-color: inherit;
-    mix-blend-mode: color-burn;
-} */
+    /* background-blend-mode: color-burn; */
+    height: 50vh;
+    position: relative;
+    box-shadow: var(--shadow) inset 0 0 20px;
+}
+
+#clients h2 {
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
 
 .logos {
+    position: absolute;
     width: 80%;
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+    height: inherit;
+}
+
+.logo-wrapper {
+    filter: grayscale(70%) brightness(0.5);
+    transition: filter 0.2s ease-in;
+}
+
+.logo-wrapper:hover {
+    filter: grayscale(0) brightness(1);
 }
 
 .logo-wrapper img {
-    max-width: 200px;
+    max-width: 12vw;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        /* Normal size */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* Subtle shadow */
+    }
+
+    50% {
+        transform: scale(1.05);
+        /* Slightly larger */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        /* Stronger shadow */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Back to normal */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* Reset shadow */
+    }
 }
