@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Your technology partners from root to fruit! | Pépin Raisin</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/testim.css">
     <!-- <link rel="stylesheet" href="css/locomotive-scroll.css"> -->
     <meta name="description" content="">
 
@@ -26,7 +27,7 @@
         rel="stylesheet">
 
     <link rel="manifest" href="site.webmanifest">
-    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#613DC1">
 
     <!-- <script src="js/locomotive-scroll.min.js"></script> -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -34,10 +35,11 @@
 
 <body data-scroll-container>
     <div class="nav">
-        <h2><img src="images/leaf.svg" /> Pépin Raisin</h2>
+        <!-- <h2><img src="images/leaf.svg" /> Pépın Raısın</h2> -->
+        <img src="images/g12190.png" height="60" />
     </div>
     <section id="hero">
-        <h1>Your <span id="rotating-head"></span>Partners From Root to Fruit!</h1>
+        <h1>Your <span id="rotating-head"></span>Partners From Conception to Completion!</h1>
         <ul class="checklist">
             <li>End-to-end software development</li>
             <li>Branding Packages</li>
@@ -50,46 +52,43 @@
         <h2>Our Services</h2>
         <div id="services">
             <div>
-                <h3>Technology</h3>
-                <div>
-                    <ul class="checklist">
-                        <li>App Development</li>
-                        <li>Web Development</li>
-                        <li>UI/UX Development</li>
-                        <li>FinTech Solutions</li>
-                        <li>Data Analytics</li>
-                        <li>BI Solutions</li>
-                    </ul>
-                    <button class="secondary">Learn More</button>
-                </div>
+                <h3>Branding</h3>
+                <ul class="checklist">
+                    <li>Discovery</li>
+                    <li>Logo Design</li>
+                    <li>Website</li>
+                    <li>Visual Assets</li>
+                    <li>Brand Guidelines</li>
+                </ul>
+                <button class="secondary">Learn More</button>
             </div>
             <div>
-                <h3>Branding</h3>
-                <div>
-                    <ul class="checklist">
-                        <li>Discovery</li>
-                        <li>Logo Design</li>
-                        <li>Website</li>
-                        <li>Branding Guide</li>
-                    </ul>
-                    <button class="secondary">Learn More</button>
-                </div>
+                <h3>Technology</h3>
+                <ul class="checklist">
+                    <li>App Development</li>
+                    <li>Web Development</li>
+                    <li>UI/UX Development</li>
+                    <li>FinTech Solutions</li>
+                    <li>Data Analytics</li>
+                    <li>BI Solutions</li>
+                </ul>
+                <button class="secondary">Learn More</button>
             </div>
             <div>
                 <h3>Marketing</h3>
-                <div>
-                    <ul class="checklist">
-                        <li>SEO</li>
-                        <li>SEM</li>
-                        <li>SMM</li>
-                    </ul>
-                    <button class="secondary">Learn More</button>
-                </div>
+                <ul class="checklist">
+                    <li>Search Engine Optimisation</li>
+                    <li>Search Engine Marketing</li>
+                    <li>Social Media Marketing</li>
+                    <li>Video Ads</li>
+                </ul>
+                <button class="secondary">Learn More</button>
             </div>
         </div>
     </section>
     <section id="clients">
-        <h2>Our Clients</h2>
+        <!-- <h2>Our Clients</h2> -->
+        <div class="glass"></div>
         <div class="logos">
             <div class="logo-wrapper"><img src="images/logos/entourage.png" /></div>
             <div class="logo-wrapper"><img src="images/logos/safiaberrada2.png" /></div>
@@ -112,40 +111,57 @@
             <div class="logo-wrapper"><img src="images/logos/star.png" /></div>
             <div class="logo-wrapper"><img src="images/logos/luseo.png" /></div>
             <div class="logo-wrapper"><img src="images/logos/hippocampe.png" /></div>
-            <div class="logo-wrapper"><img src="images/logos/logo.gif" /></div>
+            <div class="logo-wrapper"><img src="images/logos/lajolla.png" /></div>
             <div class="logo-wrapper"><img src="images/logos/gps.png" /></div>
             <div class="logo-wrapper"><img src="images/logos/hills.png" /></div>
-            <div class="logo-wrapper"><img src="images/logos/logo.png" /></div>
-
+            <div class="logo-wrapper"><img src="images/logos/tdl.png" /></div>
             <div class="logo-wrapper"><img src="images/logos/badaboom1.jpg" /></div>
             <div class="logo-wrapper"><img src="images/logos/dsm.jpg" /></div>
         </div>
     </section>
-    <div>
-        <div data-scroll-section>
-            <h1 data-scroll>Hey</h1>
-            <p data-scroll>👋</p>
+    <section id="testim" class="testim">
+        <!--         <div class="testim-cover"> -->
+        <div class="wrap">
+
+            <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+            <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+            <ul id="testim-dots" class="dots">
+            </ul>
+            <div id="testim-content" class="cont">
+            </div>
+
         </div>
-        <div data-scroll-section>
-            <h2 data-scroll data-scroll-speed="1">What's up?</h2>
-            <p data-scroll data-scroll-speed="2">😬</p>
-        </div>
-    </div>
+        <!--         </div> -->
+    </section>
+    <section id="spacer">
+
+    </section>
+    <section id="footer">
+        Tata!
+    </section>
+
 </body>
 
+<script src="https://use.fontawesome.com/1744f3f671.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/reviews.js"></script>
+<script type="text/javascript" src="js/testim.js"></script>
 <script>
     const logoContainer = document.querySelector('.logos');
 
     // Set up a scroll event listener
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
-        const difference = scrollPosition - window.screen.height
+        const difference = scrollPosition - window.innerHeight * 0.7
+        const difference2 = scrollPosition - window.innerHeight * 1.6
+        const translation = difference2 / 3.5
 
-        if (scrollPosition > 0.5 * window.screen.height)
+        if (scrollPosition > 0.5 * window.innerHeight)
             Object.values(document.querySelectorAll('#services>div')).map(d => d.classList.add('pulsar'));
         if (difference > 1)
-            logoContainer.style.transform = `translateY(-${difference}px)`;
+            logoContainer.style.transform = `translateY(-${difference / 2}px)`;
+        if (difference2 > 1 && translation < 200)
+            document.querySelector('.testim').style.transform = `translateY(${translation}px)`;
     });
 </script>
 

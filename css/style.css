@@ -6,6 +6,12 @@
     --green: #07BEB8;
     --lime: #CEFF1A;
     --blue: #3A5999;
+    --hibiscus-background: url(../images/AlphaHibiscusLines.png);
+    --surf-background: url(https://lajollaweb.com/images/surf-background.png);
+    --about-background: url(https://lajollaweb.com/images/about-background.png);
+    --portfolio-background: url(https://lajollaweb.com/images/portfolio-background.png);
+    /* --hibiscus-background: url(https://lajollaweb.com/images/hibiscus-background.gif); */
+    --footer-height: 100vh;
 }
 
 html,
@@ -16,7 +22,6 @@ button {
 
 body {
     margin: 0;
-    background-color: var(--black);
     color: var(--white);
 }
 
@@ -49,23 +54,37 @@ button {
     color: var(--blue);
     border: none;
     border-radius: 2px;
-    transition: all 0.3s ease-in;
+    transition: all 0.2s ease-out;
     cursor: pointer;
+    transform: translate(2.5px, -2.5px);
+    box-shadow: var(--green) -5px 5px 0px;
 }
 
 button:hover {
-    background-color: var(--green);
-    color: var(--purple);
+    transform: translate(8px, -8px);
+    box-shadow: var(--green) -8px 8px 3px;
+}
+
+button:active {
+    transform: translate(2.5px, -2.5px);
+    box-shadow: var(--green) -5px 5px 0px;
 }
 
 button.secondary {
     background-color: var(--purple);
     color: var(--white);
+    box-shadow: var(--green) -5px 5px 0px;
 }
 
 button.secondary:hover {
-    background-color: var(--lime);
-    color: var(--blue);
+    box-shadow: var(--green) -8px 8px 3px;
+
+}
+
+button.secondary:active {
+    transform: translate(2.5px, -2.5px);
+    box-shadow: var(--green) -5px 5px 0px;
+
 }
 
 .ham,
@@ -92,7 +111,9 @@ button.secondary:hover {
     background-color: var(--white);
     color: var(--black);
     padding: 10px 20px;
-    z-index: 1;
+    padding: 10px 20px 0;
+    z-index: 3;
+    box-shadow: var(--shadow) 0 0 10px;
 }
 
 .nav h2 {
@@ -138,29 +159,53 @@ ul.checklist li::before {
 }
 
 #heroine {
-    background-image: url(https://lajollaweb.com/images/portfolio-background.png);
-    /* background-image: url(https://lajollaweb.com/images/about-background.gif); */
-    background-blend-mode: color-burn;
-    background-color: inherit;
+    background-color: var(--white);
+    background-size: 200px;
+    color: var(--black);
     padding-bottom: 100px;
 }
 
 #services {
     display: flex;
     gap: 20px;
+    width: 90%;
 }
 
-#services>div {
+#services div {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    width: 20vw;
-    height: 20vw;
-    border: 1px solid var(--white);
+    position: relative;
+    border-radius: 10px;
+    border: 4px dashed var(--blue);
+    margin-top: 20px;
+    padding: 20px;
+    flex: 1;
+}
+
+#services div h3 {
+    background: var(--white);
+    position: absolute;
+    padding: 0 10px;
+    top: -70px;
+    text-align: center;
+}
+
+#services div h3 {
+    /* left: 14px; */
+}
+
+#services li {
+    font-size: smaller;
+}
+
+#services li::before {
+    color: var(--blue);
 }
 
 .pulsar {
-    animation: pulse 2s ease-in-out 1;
+    /* animation: pulse 2s ease-in-out 1; */
 }
 
 #services>div:nth-child(1) {
@@ -175,42 +220,21 @@ ul.checklist li::before {
     animation-delay: 1s;
 }
 
-#services>div:hover {
-    border-color: var(--green);
-    color: var(--green)
-}
-
-#services>div div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--green);
-    transition: all 0.3s ease-in;
-    color: var(--black);
-    position: absolute;
-    font-size: smaller;
-    width: 20vw;
-    height: 20vw;
-    opacity: 0;
-}
-
-#services>div:hover div {
-    opacity: 1;
-}
-
 #clients {
     overflow: hidden;
     /* background-image: url(https://lajollaweb.com/images/about-background.png); */
-    background-color: inherit;
+    background-color: var(--black);
     /* background-blend-mode: color-burn; */
-    height: 50vh;
+    height: max(50vh, 50vw);
     position: relative;
-    box-shadow: var(--shadow) inset 0 0 20px;
+    box-shadow: var(--shadow) 0 0 10px 5px;
+    z-index: 2;
 }
 
 #clients h2 {
-    z-index: 1;
-    backdrop-filter: blur(5px);
+    z-index: 2;
+    backdrop-filter: blur(1.5px);
+    text-shadow: -4px 4px 4px var(--shadow);
 }
 
 .logos {
@@ -224,10 +248,11 @@ ul.checklist li::before {
     transform: translateY(0);
     transition: transform 0.1s ease-out;
     height: inherit;
+    top: min(30vh, 30vw);
 }
 
 .logo-wrapper {
-    filter: grayscale(70%) brightness(0.5);
+    filter: grayscale(100%) brightness(0.7);
     transition: filter 0.2s ease-in;
 }
 
@@ -237,6 +262,64 @@ ul.checklist li::before {
 
 .logo-wrapper img {
     max-width: 12vw;
+}
+
+.glass {
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue);
+    background-blend-mode: color-burn;
+    background-blend-mode: hard-light;
+    background-blend-mode: multiply;
+    background-image: url(https://toppng.com/public/uploads/thumbnail/lass-reflection-png-windows-7-glass-reflectio-11562852519yjsyzn3pqe.png);
+    position: absolute;
+    background-size: cover;
+    z-index: 1;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.callout {
+    background-color: var(--white);
+    border-radius: 5px;
+    color: var(--black);
+    width: 500px;
+    font-size: smaller;
+    padding: 30px;
+    text-align: justify;
+}
+
+.date,
+.name {
+    font-size: small;
+}
+
+.date {
+    color: var(--shadow);
+}
+
+.name {
+    color: var(--green);
+}
+
+.review {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+
+#spacer,
+#footer {
+    height: var(--footer-height);
+    width: 100%;
+}
+
+#footer {
+    background-color: var(--purple);
+    z-index: -999;
+    position: fixed;
+    bottom: 0;
 }
 
 /* Pulse animation */
