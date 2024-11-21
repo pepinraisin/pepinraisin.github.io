@@ -22,6 +22,7 @@ button {
 
 body {
     margin: 0;
+    background-color: var(--purple);
     color: var(--white);
 }
 
@@ -49,17 +50,17 @@ p {
 }
 
 button {
-    font-weight: 700;
-    text-shadow: -1px 1px 0px var(--green);
-    padding: 10px 20px;
-    background-color: var(--lime);
-    color: var(--blue);
-    border: none;
-    border-radius: 2px;
-    transition: all 0.2s ease-out;
     cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    padding: 10px 20px;
+    color: var(--blue);
+    transition: all 0.2s ease-out;
+    background-color: var(--lime);
     transform: translate(2.5px, -2.5px);
     box-shadow: var(--green) -5px 5px 0px;
+    text-shadow: -1px 1px 0px var(--green);
 }
 
 button:hover {
@@ -140,6 +141,8 @@ button.secondary:active {
     background-clip: content-box;
     height: 100vh;
     width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 #hero-fg {
@@ -225,6 +228,7 @@ ul.checklist li::before {
     padding: 0 10px;
     top: -70px;
     text-align: center;
+    /* text-shadow: -2px 2px 0px var(--green); */
 }
 
 #services div h3 {

@@ -37,6 +37,10 @@ body {
     background: rgba(30, 30, 30);
 } */
 
+#testimonials {
+    overflow: hidden;
+}
+
 .testim {
     width: 100%;
     position: relative;
@@ -52,6 +56,7 @@ body {
     transition: all 0.1s linear;
     transform: translateY(0);
     box-shadow: var(--shadow) 0 0 10px 5px;
+    text-shadow: 2px 2px black;
 
 }
 

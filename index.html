@@ -72,7 +72,7 @@
                 <ul class="checklist">
                     <li>App Development</li>
                     <li>Web Development</li>
-                    <li>UI/UX Development</li>
+                    <li>UI/UX Design</li>
                     <li>FinTech Solutions</li>
                     <li>Data Analytics</li>
                     <li>BI Solutions</li>
@@ -129,25 +129,27 @@
             <div class="logo-wrapper"><img src="images/logos/dsm.jpg" /></div>
         </div>
     </section>
-    <section id="testim" class="testim">
-        <!--         <div class="testim-cover"> -->
-        <div class="wrap">
+    <section id="testimonials">
+        <div id="testim" class="testim">
+            <!--         <div class="testim-cover"> -->
+            <div class="wrap">
 
-            <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
-            <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
-            <ul id="testim-dots" class="dots">
-            </ul>
-            <div id="testim-content" class="cont">
+                <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+                <span id="left-arrow" class="arrow left fa fa-chevron-left "></span>
+                <ul id="testim-dots" class="dots">
+                </ul>
+                <div id="testim-content" class="cont">
+                </div>
+
             </div>
-
+            <!--         </div> -->
         </div>
-        <!--         </div> -->
     </section>
     <section id="spacer">
 
     </section>
     <section id="footer">
-        Tata!
+        <img src="images/logo.svg">
     </section>
 
 </body>
@@ -155,16 +157,18 @@
 <script src="https://use.fontawesome.com/1744f3f671.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/reviews.js"></script>
-<script type="text/javascript" src="js/testim.js"></script>
-<script>
+<script src="js/testim.js"></script>
+<script type="text/javascript">
+    const logoContainer = document.querySelector('.logos');
+    const mySvg = document.getElementById('hero-bg-obj');
+
     function svgMagic() {
-        Object.values(mySvg.contentDocument.querySelectorAll("#layer1 > g")).map(path => {
+        Object.values(mySvg.contentDocument?.querySelectorAll("#layer1 > g") ?? {}).map(path => {
             svgPaths.push(path);
         })
     }
 
-    // Set up a scroll event listener
-    window.addEventListener('scroll', (e) => {
+    function scrollMagic() {
         const coin = Math.round(Math.random());
         const scrollPosition = window.scrollY;
         const difference = scrollPosition - window.innerHeight * 0.7
@@ -185,12 +189,17 @@
                 const direction = i % 2 === 0 ? 1 : -1;
                 d.style.transform = `translateY(${direction * scrollPosition / 20}px)`
             })
-    });
+    }
 
     let svgPaths = [];
-    const logoContainer = document.querySelector('.logos');
-    const mySvg = document.getElementById('hero-bg-obj');
+
+
     mySvg.addEventListener('load', svgMagic);
+    window.addEventListener('scroll', scrollMagic);
+    document.addEventListener("DOMContentLoaded", function (event) {
+        svgMagic();
+        scrollMagic();
+    });
     svgMagic();
 </script>
 
