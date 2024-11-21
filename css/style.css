@@ -11,7 +11,7 @@
     --about-background: url(https://lajollaweb.com/images/about-background.png);
     --portfolio-background: url(https://lajollaweb.com/images/portfolio-background.png);
     /* --hibiscus-background: url(https://lajollaweb.com/images/hibiscus-background.gif); */
-    --footer-height: 60vh;
+    --footer-height: 30vh;
 }
 
 html,
@@ -49,6 +49,8 @@ p {
 }
 
 button {
+    font-weight: 700;
+    text-shadow: -1px 1px 0px var(--green);
     padding: 10px 20px;
     background-color: var(--lime);
     color: var(--blue);
@@ -63,6 +65,8 @@ button {
 button:hover {
     transform: translate(8px, -8px);
     box-shadow: var(--green) -8px 8px 3px;
+    text-shadow: -1.5px 1.5px 1px var(--green);
+
 }
 
 button:active {
@@ -143,11 +147,19 @@ button.secondary:active {
 }
 
 #hero-bg {
+    left: 0;
     top: 100px;
-    width: 100%;
-    mix-blend-mode: overlay;
-    position: absolute;
     z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    mix-blend-mode: overlay;
+}
+
+#hero-bg-obj {
+    width: 100%;
+    height: 100%;
 }
 
 #hero::selection {
@@ -250,7 +262,7 @@ ul.checklist li::before {
     /* background-blend-mode: color-burn; */
     height: max(50vh, 50vw);
     position: relative;
-    box-shadow: var(--shadow) 0 10px 10px 5px;
+    box-shadow: var(--shadow) 0 5px 10px 5px;
     z-index: 2;
 }
 
@@ -283,6 +295,7 @@ ul.checklist li::before {
 }
 
 .logos {
+    mix-blend-mode: exclusion;
     position: absolute;
     width: 80%;
     display: flex;

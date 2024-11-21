@@ -39,7 +39,9 @@
         <img src="images/g12190.png" height="60" />
     </div>
     <section id="hero">
-        <object id="hero-bg" type="image/svg+xml" data="images/techback.svg"></object>
+        <div id="hero-bg">
+            <object id="hero-bg-obj" type="image/svg+xml" data="images/techback.svg"></object>
+        </div>
         <div id="hero-fg">
             <h1>Your <span id="rotating-head"></span>Partners From Conception to Completion!</h1>
             <ul class="checklist">
@@ -167,14 +169,17 @@
         const scrollPosition = window.scrollY;
         const difference = scrollPosition - window.innerHeight * 0.7
         const difference2 = scrollPosition - window.innerHeight * 1.6
-        const translation = difference2 / 3.5
+        const translation = difference2 * 3
 
         if (scrollPosition > 0.5 * window.innerHeight)
             Object.values(document.querySelectorAll('#services>div')).map(d => d.classList.add('pulsar'));
         if (difference > 1)
             logoContainer.style.transform = `translateY(-${difference / 2}px)`;
-        if (difference2 > 1 && translation < 200)
-            document.querySelector('.testim').style.transform = `translateY(${translation}px)`;
+        if (difference2 > 1)
+            if (translation < 700)
+                document.querySelector('.testim').style.transform = `translateY(${translation}px)`;
+            else
+                document.querySelector('.testim').style.transform = `translateY(700px)`;
         if (svgPaths.length)
             svgPaths.map((d, i) => {
                 const direction = i % 2 === 0 ? 1 : -1;
@@ -184,7 +189,7 @@
 
     let svgPaths = [];
     const logoContainer = document.querySelector('.logos');
-    const mySvg = document.getElementById('hero-bg');
+    const mySvg = document.getElementById('hero-bg-obj');
     mySvg.addEventListener('load', svgMagic);
     svgMagic();
 </script>
