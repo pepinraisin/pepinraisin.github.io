@@ -39,17 +39,20 @@
         <img src="images/g12190.png" height="60" />
     </div>
     <section id="hero">
-        <h1>Your <span id="rotating-head"></span>Partners From Conception to Completion!</h1>
-        <ul class="checklist">
-            <li>End-to-end software development</li>
-            <li>Branding Packages</li>
-            <li>SEO</li>
-        </ul>
-        <button id="contact-us">Let's talk</button>
-        <!-- <p id="rotating-desc"> </p> -->
+        <object id="hero-bg" type="image/svg+xml" data="images/techback.svg"></object>
+        <div id="hero-fg">
+            <h1>Your <span id="rotating-head"></span>Partners From Conception to Completion!</h1>
+            <ul class="checklist">
+                <li>End-to-end software development</li>
+                <li>Branding Packages</li>
+                <li>SEO</li>
+            </ul>
+            <button id="contact-us">Let's talk</button>
+        </div>
     </section>
+
     <section id="heroine">
-        <h2>Our Services</h2>
+        <h2></h2>
         <div id="services">
             <div>
                 <h3>Branding</h3>
@@ -86,6 +89,11 @@
             </div>
         </div>
     </section>
+    <!-- <section id="sidekick">
+        <h2>4 <span id="continents">continents</span>, 4 <span id="countries">countries</span>.</h2>
+        <h2 id="plethora">Plethora of
+            clients.</h2>
+    </section> -->
     <section id="clients">
         <!-- <h2>Our Clients</h2> -->
         <div class="glass"></div>
@@ -147,10 +155,15 @@
 <script type="text/javascript" src="js/reviews.js"></script>
 <script type="text/javascript" src="js/testim.js"></script>
 <script>
-    const logoContainer = document.querySelector('.logos');
+    function svgMagic() {
+        Object.values(mySvg.contentDocument.querySelectorAll("#layer1 > g")).map(path => {
+            svgPaths.push(path);
+        })
+    }
 
     // Set up a scroll event listener
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', (e) => {
+        const coin = Math.round(Math.random());
         const scrollPosition = window.scrollY;
         const difference = scrollPosition - window.innerHeight * 0.7
         const difference2 = scrollPosition - window.innerHeight * 1.6
@@ -162,7 +175,18 @@
             logoContainer.style.transform = `translateY(-${difference / 2}px)`;
         if (difference2 > 1 && translation < 200)
             document.querySelector('.testim').style.transform = `translateY(${translation}px)`;
+        if (svgPaths.length)
+            svgPaths.map((d, i) => {
+                const direction = i % 2 === 0 ? 1 : -1;
+                d.style.transform = `translateY(${direction * scrollPosition / 20}px)`
+            })
     });
+
+    let svgPaths = [];
+    const logoContainer = document.querySelector('.logos');
+    const mySvg = document.getElementById('hero-bg');
+    mySvg.addEventListener('load', svgMagic);
+    svgMagic();
 </script>
 
 </html>

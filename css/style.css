@@ -11,7 +11,7 @@
     --about-background: url(https://lajollaweb.com/images/about-background.png);
     --portfolio-background: url(https://lajollaweb.com/images/portfolio-background.png);
     /* --hibiscus-background: url(https://lajollaweb.com/images/hibiscus-background.gif); */
-    --footer-height: 100vh;
+    --footer-height: 60vh;
 }
 
 html,
@@ -133,11 +133,34 @@ button.secondary:active {
 
 #hero {
     background-color: var(--purple);
-    background-image: url(../images/techback.png);
-    background-blend-mode: color-burn;
     background-clip: content-box;
     height: 100vh;
     width: 100%;
+}
+
+#hero-fg {
+    z-index: 1;
+}
+
+#hero-bg {
+    top: 100px;
+    width: 100%;
+    mix-blend-mode: overlay;
+    position: absolute;
+    z-index: 0;
+}
+
+#hero::selection {
+    background-color: var(--lime);
+}
+
+#rotating-head::selection {
+    background-color: var(--green);
+}
+
+#hero h1::selection {
+    background-color: var(--lime);
+    color: var(--purple)
 }
 
 #hero h1 {
@@ -227,7 +250,7 @@ ul.checklist li::before {
     /* background-blend-mode: color-burn; */
     height: max(50vh, 50vw);
     position: relative;
-    box-shadow: var(--shadow) 0 0 10px 5px;
+    box-shadow: var(--shadow) 0 10px 10px 5px;
     z-index: 2;
 }
 
@@ -235,6 +258,28 @@ ul.checklist li::before {
     z-index: 2;
     backdrop-filter: blur(1.5px);
     text-shadow: -4px 4px 4px var(--shadow);
+}
+
+#sidekick {
+    /* background-color: var(--black);
+    color: var(--white); */
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+#continents {
+    color: var(--green)
+}
+
+#countries {
+    color: var(--lime)
+}
+
+#plethora {
+    background: linear-gradient(to bottom, var(--green), var(--lime));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .logos {
