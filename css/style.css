@@ -16,8 +16,9 @@
 
 html,
 button {
-    font-family: Roboto Mono;
+    font-family: Roboto Serif;
     font-size: xx-large;
+    font-weight: 100;
 }
 
 body {
@@ -117,7 +118,7 @@ button.secondary:active {
     color: var(--black);
     padding: 10px 20px;
     padding: 10px 20px 0;
-    z-index: 3;
+    z-index: 999;
     box-shadow: var(--shadow) 0 0 10px;
 }
 
@@ -143,6 +144,7 @@ button.secondary:active {
     width: 100%;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 #hero-fg {
@@ -187,13 +189,194 @@ button.secondary:active {
     font-size: smaller;
 }
 
+#hero li:before {
+    color: var(--green);
+}
+
 ul.checklist {
     list-style: none;
     padding: 0;
 }
 
 ul.checklist li::before {
-    content: "✔ "
+    content: "\f046   ";
+    content: "\f00c   ";
+    content: "\f05d   ";
+    content: "\f058   ";
+    font-family: FontAwesome;
+}
+
+#font-well {
+    width: 100%;
+    height: 100%;
+    color: violet;
+    filter: blur(1px);
+    position: absolute;
+    pointer-events: none;
+}
+
+#font-well div {
+    transform: rotate(-30deg);
+    margin: 5%;
+}
+
+#font-well div:nth-child(2n) {
+    float: left !important;
+}
+
+#font-well div:nth-child(n) {
+    float: right;
+}
+
+#protagonist {
+    transition: 0.3s all ease-in-out;
+    background-color: var(--white);
+    height: 800px;
+    gap: 20px;
+}
+
+#protagonist.purple-bg {
+    background-color: var(--purple);
+}
+
+#protagonist.green-bg {
+    background-color: var(--green);
+}
+
+#protagonist.black-bg {
+    background-color: var(--black);
+}
+
+#apple-magic {
+    width: 100%;
+    height: 100%;
+    transform: translateY(-40vmin);
+    /* transition: 0.3s all ease-in-out; */
+}
+
+#apple-magic.zero {
+    transform: translateY(0);
+}
+
+#protagonist.purple-bg .heading-inner {
+    color: var(--lime);
+}
+
+#protagonist.green-bg .heading-inner span {
+    color: var(--lime);
+}
+
+.heading-inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: var(--purple);
+}
+
+.heading-inner span {
+    color: var(--green);
+}
+
+#font-well,
+.foot-inner,
+.heading-inner,
+.content-inner {
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    left: 0;
+    right: 0;
+}
+
+#font-well.active,
+.foot-inner.active,
+.heading-inner.active,
+.content-inner.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.content-inner {
+    display: flex;
+    font-size: smaller;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+}
+
+.marquee {
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    overflow: hidden;
+    position: absolute;
+}
+
+.marquee-inner {
+    flex: 0 0 auto;
+    min-width: 100%;
+    height: 80px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+    animation: ticker 10s linear infinite;
+}
+
+.marquee img {
+    height: 100%;
+}
+
+div.villain .circle {
+    width: 300px;
+    height: 300px;
+    background: var(--purple);
+    clip-path: circle();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    float: left;
+    shape-outside: circle();
+}
+
+/* div.villain:nth-child(2) .circle {
+    float: right;
+}
+
+div.villain:nth-child(2) ul {
+    text-align: right;
+} */
+
+
+div.villain {
+    width: 900px;
+}
+
+div.villain ul {
+    padding: 0;
+    display: inline;
+    color: black;
+    text-align: left;
+}
+
+div.villain li {
+    height: 50px;
+    list-style: none;
+}
+
+
+div.villain li::before,
+div.villain:nth-child(2) ul li::after {
+    content: "\0020   ";
+    display: inline-block;
+    width: 20px;
+    font-family: FontAwesome;
 }
 
 #heroine {
@@ -263,10 +446,11 @@ ul.checklist li::before {
     overflow: hidden;
     /* background-image: url(https://lajollaweb.com/images/about-background.png); */
     background-color: var(--black);
+    /* background-color: var(--white); */
     /* background-blend-mode: color-burn; */
     height: max(50vh, 50vw);
     position: relative;
-    box-shadow: var(--shadow) 0 5px 10px 5px;
+    box-shadow: var(--shadow) 0 10px 10px 5px;
     z-index: 2;
 }
 
@@ -274,28 +458,6 @@ ul.checklist li::before {
     z-index: 2;
     backdrop-filter: blur(1.5px);
     text-shadow: -4px 4px 4px var(--shadow);
-}
-
-#sidekick {
-    /* background-color: var(--black);
-    color: var(--white); */
-    background-color: var(--blue);
-    color: var(--white);
-}
-
-#continents {
-    color: var(--green)
-}
-
-#countries {
-    color: var(--lime)
-}
-
-#plethora {
-    background: linear-gradient(to bottom, var(--green), var(--lime));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
 }
 
 .logos {
@@ -337,7 +499,7 @@ ul.checklist li::before {
     position: absolute;
     background-size: cover;
     z-index: 1;
-    opacity: 0.3;
+    opacity: 0.2;
     pointer-events: none;
 }
 
@@ -405,5 +567,15 @@ ul.checklist li::before {
         /* Back to normal */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         /* Reset shadow */
+    }
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
     }
 }

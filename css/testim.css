@@ -4,6 +4,7 @@
     --name: var(--lime);
     --from: var(--green);
     --date: var(--blue);
+    --text: var(--white);
 }
 
 /* *,
@@ -42,6 +43,7 @@ body {
 }
 
 .testim {
+    display: flex;
     width: 100%;
     position: relative;
     min-height: 700px;
@@ -71,7 +73,7 @@ body {
 .testim .arrow {
     display: block;
     position: absolute;
-    color: #eee;
+    color: var(--text);
     cursor: pointer;
     font-size: 2em;
     top: 50%;
@@ -124,7 +126,7 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    border: 1px solid #eee;
+    border: 1px solid var(--text);
     margin: 0 10px;
     cursor: pointer;
     -webkit-transition: all .5s ease-in-out;
@@ -201,9 +203,11 @@ body {
 
 .testim .cont div p {
     font-size: 0.5em;
-    color: #eee;
+    color: var(--text);
     width: 80%;
     margin: auto;
+    font-family: Roboto Mono, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 200;
 }
 
 .testim .cont div.active .img img {
@@ -260,13 +264,13 @@ body {
 
 @-webkit-keyframes testim-scale {
     0% {
-        -webkit-box-shadow: 0px 0px 0px 0px #eee;
-        box-shadow: 0px 0px 0px 0px #eee;
+        -webkit-box-shadow: 0px 0px 0px 0px var(--text);
+        box-shadow: 0px 0px 0px 0px var(--text);
     }
 
     35% {
-        -webkit-box-shadow: 0px 0px 10px 5px #eee;
-        box-shadow: 0px 0px 10px 5px #eee;
+        -webkit-box-shadow: 0px 0px 10px 5px var(--text);
+        box-shadow: 0px 0px 10px 5px var(--text);
     }
 
     70% {
@@ -282,13 +286,13 @@ body {
 
 @-moz-keyframes testim-scale {
     0% {
-        -moz-box-shadow: 0px 0px 0px 0px #eee;
-        box-shadow: 0px 0px 0px 0px #eee;
+        -moz-box-shadow: 0px 0px 0px 0px var(--text);
+        box-shadow: 0px 0px 0px 0px var(--text);
     }
 
     35% {
-        -moz-box-shadow: 0px 0px 10px 5px #eee;
-        box-shadow: 0px 0px 10px 5px #eee;
+        -moz-box-shadow: 0px 0px 10px 5px var(--text);
+        box-shadow: 0px 0px 10px 5px var(--text);
     }
 
     70% {
@@ -304,13 +308,13 @@ body {
 
 @-ms-keyframes testim-scale {
     0% {
-        -ms-box-shadow: 0px 0px 0px 0px #eee;
-        box-shadow: 0px 0px 0px 0px #eee;
+        -ms-box-shadow: 0px 0px 0px 0px var(--text);
+        box-shadow: 0px 0px 0px 0px var(--text);
     }
 
     35% {
-        -ms-box-shadow: 0px 0px 10px 5px #eee;
-        box-shadow: 0px 0px 10px 5px #eee;
+        -ms-box-shadow: 0px 0px 10px 5px var(--text);
+        box-shadow: 0px 0px 10px 5px var(--text);
     }
 
     70% {
@@ -326,13 +330,13 @@ body {
 
 @-o-keyframes testim-scale {
     0% {
-        -o-box-shadow: 0px 0px 0px 0px #eee;
-        box-shadow: 0px 0px 0px 0px #eee;
+        -o-box-shadow: 0px 0px 0px 0px var(--text);
+        box-shadow: 0px 0px 0px 0px var(--text);
     }
 
     35% {
-        -o-box-shadow: 0px 0px 10px 5px #eee;
-        box-shadow: 0px 0px 10px 5px #eee;
+        -o-box-shadow: 0px 0px 10px 5px var(--text);
+        box-shadow: 0px 0px 10px 5px var(--text);
     }
 
     70% {
@@ -348,11 +352,11 @@ body {
 
 @keyframes testim-scale {
     0% {
-        box-shadow: 0px 0px 0px 0px #eee;
+        box-shadow: 0px 0px 0px 0px var(--text);
     }
 
     35% {
-        box-shadow: 0px 0px 10px 5px #eee;
+        box-shadow: 0px 0px 10px 5px var(--text);
     }
 
     70% {
