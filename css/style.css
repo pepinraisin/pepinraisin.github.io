@@ -12,6 +12,9 @@
     --portfolio-background: url(https://lajollaweb.com/images/portfolio-background.png);
     /* --hibiscus-background: url(https://lajollaweb.com/images/hibiscus-background.gif); */
     --footer-height: 30vh;
+    --landscape: (1vw - 1vmin);
+    --portrait: (1vh - 1vmin);
+    --difference: calc(1vw - 1vh);
 }
 
 html,
@@ -231,7 +234,7 @@ ul.checklist li::before {
 #protagonist {
     transition: 0.3s all ease-in-out;
     background-color: var(--white);
-    height: 800px;
+    height: 80vh;
     gap: 20px;
 }
 
@@ -308,6 +311,10 @@ ul.checklist li::before {
     padding: 10px;
 }
 
+.foot-inner {
+    bottom: calc(var(--portrait) * 20);
+}
+
 .marquee {
     bottom: 0;
     width: 100%;
@@ -321,7 +328,7 @@ ul.checklist li::before {
 .marquee-inner {
     flex: 0 0 auto;
     min-width: 100%;
-    height: 80px;
+    height: 8vh;
     display: flex;
     gap: 20px;
     justify-content: space-evenly;
@@ -443,14 +450,14 @@ div.villain:nth-child(2) ul li::after {
 }
 
 #clients {
-    overflow: hidden;
+    /* overflow: hidden; */
     /* background-image: url(https://lajollaweb.com/images/about-background.png); */
     background-color: var(--black);
     /* background-color: var(--white); */
     /* background-blend-mode: color-burn; */
     height: max(50vh, 50vw);
     position: relative;
-    box-shadow: var(--shadow) 0 10px 10px 5px;
+    /* box-shadow: var(--shadow) 0 10px 10px 5px; */
     z-index: 2;
 }
 
@@ -545,6 +552,23 @@ div.villain:nth-child(2) ul li::after {
     position: fixed;
     bottom: 0;
 }
+
+@media screen and (max-width: 700px) {
+
+    html,
+    button {
+        font-size: x-large;
+    }
+}
+
+@media screen and (max-width: 525px) {
+
+    html,
+    button {
+        font-size: large;
+    }
+}
+
 
 /* Pulse animation */
 @keyframes pulse {
