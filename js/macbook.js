@@ -160,23 +160,17 @@ new ScrollMagic.Scene({
 new ScrollMagic.Scene({
     triggerElement: "#clients",
     triggerHook: 1,
+    // offset: -300,
     duration: clients.offsetHeight,
 })
     .setClassToggle("#protagonist", "black-bg")
-    .addIndicators() // add indicators (requires plugin)
-    .addTo(controller);
-//#endregion
-
-new ScrollMagic.Scene({
-    triggerElement: "#clients",
-    duration: clients.offsetHeight,
-})
     .on("progress", function (event) {
         logos.style.transform =
-            "translateY(" + event.progress * -clients.offsetHeight + "px)";
+            "translateY(" + event.progress * -clients.offsetHeight * 2 + "px)";
     })
     .addIndicators() // add indicators (requires plugin)
     .addTo(controller);
+//#endregion
 
 new ScrollMagic.Scene({
     triggerHook: 0,
